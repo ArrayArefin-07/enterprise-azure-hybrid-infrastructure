@@ -11,8 +11,11 @@ The system follows a "Compute-at-Edge, Store-at-Cloud" strategy:
 - **Security Layer (Azure):** Private object storage with time-bound access control.
 - **Automation (n8n):** Backend logic for AI processing and delivery.
 
+![Vercel Frontend Hero](./screenshots/vercel-frontend-hero.png)
+*Figure 1: Live Frontend Application Interface hosted on Vercel.*
+
 ![Hybrid Flow Diagram](./screenshots/hybrid-flow-diagram.png)
-*Figure 1: Cross-cloud data flow and security architecture.*
+*Figure 2: Cross-cloud data flow and security architecture.*
 
 ---
 
@@ -22,7 +25,7 @@ The system follows a "Compute-at-Edge, Store-at-Cloud" strategy:
 System documentations are isolated in a private Azure Blob Storage container (`project-assets-private`). Access is strictly denied to anonymous users, fulfilling enterprise data privacy standards.
 
 ![Azure Portal Assets](./screenshots/azure-portal-assets.png)
-*Figure 2: Isolated storage container in Microsoft Azure.*
+*Figure 3: Isolated storage container in Microsoft Azure.*
 
 #### 2. Zero-Trust Access with SAS
 Instead of public links, I implemented **Shared Access Signatures (SAS)**. This provides:
@@ -31,13 +34,13 @@ Instead of public links, I implemented **Shared Access Signatures (SAS)**. This 
 - **Granular Permissions:** Read-only access to prevent data tampering.
 
 ![Azure SAS Settings](./screenshots/azure-sas-settings.png)
-*Figure 3: Configuration of time-bound security tokens.*
+*Figure 4: Configuration of time-bound security tokens.*
 
 #### 3. Frontend Integration
 The Vercel-hosted frontend dynamically requests these signed assets. A dedicated security section in the footer allows authorized users to view the technical specifications.
 
 ![Footer Security Link](./screenshots/footer-security-link.png)
-*Figure 4: Secure gateway link integrated into the UI footer.*
+*Figure 5: Secure gateway link integrated into the UI footer.*
 
 ---
 
@@ -51,7 +54,7 @@ The Vercel-hosted frontend dynamically requests these signed assets. A dedicated
 When the SAS link is accessed, the browser securely fetches the document directly from Azure's backbone network, bypassing public web vulnerabilities.
 
 ![Secure PDF View](./screenshots/secure-pdf-view.png)
-*Figure 5: Successfully rendered system documentation via encrypted SAS tunnel.*
+*Figure 6: Successfully rendered system documentation via encrypted SAS tunnel.*
 
 ---
 **Engineered by Mobasher Arefin**
